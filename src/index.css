@@ -14,5 +14,64 @@ code {
 }
 
 .container {
-  display: flex; /* or inline-flex */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* -webkit-flex-flow: column wrap; */
+  /* align-content: space-between; */
+}
+
+.col-12{
+  width: 100%;
+}
+
+.py-3{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.font-impact{
+  font-family: 'Impact', Arial;
+  font-size: 58px;
+  color: white;
+  /* text-shadow: 2px 2px 0 #000, -2px -2px 0px #000; */
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+.font-effect-three-dimensional {
+        font-family: 'Impact', Arial;
+        font-size: 48px;
+      }
+
+.d-flex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.flex-start{
+  align-self: flex-start;
+}
+
+.flex-end{
+  align-self: flex-end;
+}
+
+.bg-img-doge-meme{
+  background-image: url(media/image/doge.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

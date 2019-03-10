@@ -15,8 +15,13 @@ serviceWorker.unregister();
 class DogeMeme extends React.Component{
   render(){
     return (
-      <div class="doge-meme">
-        
+      <div class="bg-img-doge-meme container" style={{height: window.innerHeight}}>
+        <div class="flex-start col-12 text-center font-impact py-3">
+          EASY PEASY
+        </div>
+        <div class="flex-end col-12 text-center font-impact py-3">
+          LEMON SQUEEZY
+        </div>
       </div>
     );
     // return null;
