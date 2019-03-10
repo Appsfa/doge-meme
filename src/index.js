@@ -51,10 +51,10 @@ class InputsMeme extends React.Component{
     return(
       <div class="container-fluid">
         <div class="col-6 px-2 py-1">
-          <input type="text" class="col-12" placeholder="Top" id="txtTop" data-target="top" onKeyUp={this.insertText}/>
+          <input type="text" class="col-12" placeholder="Top" id="txtTop" data-target="top" onChange={this.insertText}/>
         </div>
         <div class="col-6 px-2 py-1">
-          <input type="text" class="col-12" placeholder="Bottom" id="txtBottom" data-target="bottom" onKeyUp={this.insertText}/>
+          <input type="text" class="col-12" placeholder="Bottom" id="txtBottom" data-target="bottom" onChange={this.insertText}/>
         </div>
       </div>
     );
