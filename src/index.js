@@ -35,6 +35,16 @@ class DogeMeme extends React.Component{
 
 class InputsMeme extends React.Component{
 
+  resetText()
+  {
+    top = "reset much";
+    bottom = "how good";
+    ReactDOM.render(
+      <DogeMeme/>,
+      document.getElementById('root')
+    );
+  }
+
   insertText(e)
   {
     // console.log(e.target.value);
@@ -49,14 +59,22 @@ class InputsMeme extends React.Component{
 
   render(){
     return(
-      <div class="container-fluid">
-        <div class="col-6 px-2 py-1">
-          <input type="text" class="col-12" placeholder="Top" id="txtTop" data-target="top" onChange={this.insertText}/>
+      <div>
+        <div class="container-fluid">
+          <div class="col-6 px-2 py-1">
+            <input type="text" class="col-12" placeholder="Top" id="txtTop" data-target="top" onChange={this.insertText}/>
+          </div>
+          <div class="col-6 px-2 py-1">
+            <input type="text" class="col-12" placeholder="Bottom" id="txtBottom" data-target="bottom" onChange={this.insertText}/>
+          </div>
         </div>
-        <div class="col-6 px-2 py-1">
-          <input type="text" class="col-12" placeholder="Bottom" id="txtBottom" data-target="bottom" onChange={this.insertText}/>
+        <div class="container">
+          <div class="col-12 text-center pb-1">
+            <button type="button" onClick={this.resetText}>RESET</button>
+          </div>
         </div>
       </div>
+
     );
   }
 }
