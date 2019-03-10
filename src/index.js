@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import $ from 'jquery';
+// import $ from 'jquery';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -13,15 +13,19 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 serviceWorker.unregister();
 
+let top;
+let bottom;
+
 class DogeMeme extends React.Component{
+
   render(){
     return (
       <div class="bg-img-doge-meme container" style={{height: (window.innerHeight - document.getElementById('inputs').offsetHeight) + 'px'}}>
         <div class="flex-start col-12 text-center font-impact py-3 text-uppercase" id="top">
-          EASY PEASY
+          {top}
         </div>
         <div class="flex-end col-12 text-center font-impact py-3 text-uppercase" id="bottom">
-          LEMON SQUEEZY
+          {bottom}
         </div>
       </div>
     );
@@ -30,14 +34,27 @@ class DogeMeme extends React.Component{
 }
 
 class InputsMeme extends React.Component{
+
+  insertText(e)
+  {
+    // console.log(e.target.value);
+    var target = e.target.getAttribute('data-target');
+    var value = e.target.value;
+    target === "top" ? top = value : bottom = value;
+    ReactDOM.render(
+      <DogeMeme/>,
+      document.getElementById('root')
+    );
+  }
+
   render(){
     return(
       <div class="container-fluid">
         <div class="col-6 px-2 py-1">
-          <input type="text" class="col-12" placeholder="Top" id="txtTop"/>
+          <input type="text" class="col-12" placeholder="Top" id="txtTop" data-target="top" onKeyUp={this.insertText}/>
         </div>
         <div class="col-6 px-2 py-1">
-          <input type="text" class="col-12" placeholder="Bottom" id="txtBottom"/>
+          <input type="text" class="col-12" placeholder="Bottom" id="txtBottom" data-target="bottom" onKeyUp={this.insertText}/>
         </div>
       </div>
     );
@@ -53,15 +70,3 @@ ReactDOM.render(
   <DogeMeme/>,
   document.getElementById('root')
 );
-
-$(document).ready(function() {
-  $("#txtTop").keyup(function(event) {
-    /* Act on the event */
-    $("#top").html($(this).val());
-  });
-
-  $("#txtBottom").keyup(function(event) {
-    /* Act on the event */
-    $("#bottom").html($(this).val());
-  });
-});
