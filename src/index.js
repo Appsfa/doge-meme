@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import $ from 'jquery';
+import $ from 'jquery';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -17,10 +17,10 @@ class DogeMeme extends React.Component{
   render(){
     return (
       <div class="bg-img-doge-meme container" style={{height: (window.innerHeight - document.getElementById('inputs').offsetHeight) + 'px'}}>
-        <div class="flex-start col-12 text-center font-impact py-3" id="top">
+        <div class="flex-start col-12 text-center font-impact py-3 text-uppercase" id="top">
           EASY PEASY
         </div>
-        <div class="flex-end col-12 text-center font-impact py-3" id="bottom">
+        <div class="flex-end col-12 text-center font-impact py-3 text-uppercase" id="bottom">
           LEMON SQUEEZY
         </div>
       </div>
@@ -54,13 +54,14 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// $(document).ready(function() {
-//   $("#txtTop").keyup(function(event) {
-//     /* Act on the event */
-//     $("#top").html($(this).val());
-//   });
-//
-//   $("#txtBottom").keyup(function(event) {
-//     /* Act on the event */
-//   });
-// });
+$(document).ready(function() {
+  $("#txtTop").keyup(function(event) {
+    /* Act on the event */
+    $("#top").html($(this).val());
+  });
+
+  $("#txtBottom").keyup(function(event) {
+    /* Act on the event */
+    $("#bottom").html($(this).val());
+  });
+});

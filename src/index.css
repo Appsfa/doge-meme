@@ -115,3 +115,7 @@ code {
   background-position: center;
   background-size: cover;
 }
+
+.text-uppercase{
+  text-transform: uppercase;
+}
